@@ -4,7 +4,7 @@ from tkinter import ttk # Importing ttk provides me with acess to additional Tki
 import random # Importing random allows me to load the random module which is beneficial later in the program . 
 from tkinter import messagebox # Importing messageboxes allows my GUI to have a better user interface and making my program more user friendly.
 
-
+MAX_QUANTITY = 500
 prefix = '#' # This variable allows me to have a prefix of a hashtag before my receipt number.
 
 
@@ -39,7 +39,7 @@ def add_receipt(): # This function allows me to add a receipt to my display.
         return # This loops the code so the input is not added to the grid and asks the user to fill in all the entries .
     try:
         Quantity = int(Quantity) # This ensures that the Quantity is set to an integer.
-        if int(Quantity) not in range(1,500): # This line of code ensures that the quantity that can be purchased is appropriate hence I chose the range to be between 1 and 500
+        if int(Quantity) not in range(1,MAX_QUANTITY+1): # This line of code ensures that the quantity that can be purchased is appropriate hence I chose the range to be between 1 and 500
             messagebox.showerror("Invalid Input","Choose and apprpriate number, Range between 1-500") # This line of code prints an error message if the entry is not within the range of 1 - 500.
             return False # This loops the code so the input is not added to the grid and re-asks the user to fill in the Quantity. 
         else:
